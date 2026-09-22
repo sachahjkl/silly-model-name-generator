@@ -7,69 +7,22 @@
       name="description"
       content="Generate gloriously unnecessary AI model names."
     />
-    <meta name="theme-color" content="#f3f1eb" />
-    <title>Model Nonsense — AI Model Name Generator</title>
+    <meta name="theme-color" content="#000000" />
+    <title>Model Nonsense</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="app.js"></script>
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
-
-    <header class="site-header">
-      <a class="brand" href="./" aria-label="Model Nonsense home">
-        <span class="brand-mark" aria-hidden="true">MN</span>
-        <span>MODEL NONSENSE</span>
-      </a>
-      <span class="edition">EST. AFTER TOO MANY RELEASES</span>
-    </header>
-
     <main>
-      <section class="generator" aria-labelledby="page-title">
-        <p class="eyebrow"><span></span> AI MODEL NAME GENERATOR</p>
-        <h1 id="page-title">Your next<br />frontier model is</h1>
-
-        <div class="name-frame">
-          <p id="model-name" class="model-name" aria-live="polite"></p>
-          <span class="status-dot" title="Probably intelligent"></span>
-        </div>
-
+      <section class="generator" aria-label="AI model name generator">
+        <h1 id="model-name" aria-live="polite"></h1>
         <div class="actions">
-          <button
-            id="generate-button"
-            class="button button-primary"
-            type="button"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5"
-              />
-            </svg>
-            Generate another
-          </button>
-          <button
-            id="copy-button"
-            class="button button-secondary"
-            type="button"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="9" y="9" width="11" height="11" rx="1" />
-              <path
-                d="M15 9V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4"
-              />
-            </svg>
+          <button id="generate-button" type="button">Regenerate</button>
+          <button id="copy-button" type="button">
             <span>Copy name</span>
           </button>
         </div>
-
-        <p class="disclaimer">
-          No benchmarks. No weights. Just impeccable naming.
-        </p>
       </section>
     </main>
-
-    <footer>
-      <span>MADE FOR THE NEXT BIG THING™</span>
-      <span aria-hidden="true">v∞.0-preview</span>
-    </footer>
   </body>
 </html>

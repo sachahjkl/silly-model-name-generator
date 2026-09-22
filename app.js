@@ -5,25 +5,32 @@ const generateButton = document.querySelector("#generate-button");
 const copyButton = document.querySelector("#copy-button");
 const copyLabel = copyButton.querySelector("span");
 
-let currentName = "";
+const recentNames = [];
 
 function showNewName() {
   let nextName = generateName();
+  let attempts = 0;
 
-  while (nextName === currentName) {
+  while (recentNames.includes(nextName) && attempts < 20) {
     nextName = generateName();
+    attempts += 1;
   }
 
-  currentName = nextName;
+  recentNames.push(nextName);
+
+  if (recentNames.length > 50) {
+    recentNames.shift();
+  }
+
   nameElement.classList.remove("refreshing");
   void nameElement.offsetWidth;
-  nameElement.textContent = currentName;
+  nameElement.textContent = nextName;
   nameElement.classList.add("refreshing");
   copyLabel.textContent = "Copy name";
 }
 
 async function copyName() {
-  await navigator.clipboard.writeText(currentName);
+  await navigator.clipboard.writeText(nameElement.textContent);
   copyLabel.textContent = "Copied!";
 
   window.setTimeout(() => {
