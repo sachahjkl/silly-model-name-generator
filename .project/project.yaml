@@ -1,0 +1,16 @@
+name: "silly-model-name-generator"
+description: "A playful static web app that generates absurd AI model names and lets users copy them."
+topics:
+  - "ai"
+  - "generative-ai"
+  - "model-names"
+  - "name-generator"
+  - "parody"
+  - "humor"
+  - "static-site"
+  - "javascript"
+homepage: ""
+source:
+  provider: github
+  namespace: "sachahjkl"
+  path: "sachahjkl/silly-model-name-generator"
