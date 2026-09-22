@@ -30,11 +30,18 @@ main {
 
 .generator {
   width: min(1100px, 100%);
+  height: min(560px, calc(100vh - 64px));
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
   text-align: center;
 }
 
 h1 {
   margin: 0;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
   overflow-wrap: anywhere;
   font-size: clamp(3rem, 8vw, 7.5rem);
   font-weight: 500;
@@ -46,7 +53,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 56px;
+  margin-top: 0;
 }
 
 button {
@@ -83,6 +90,6 @@ button:focus-visible {
   }
 
   .actions {
-    margin-top: 44px;
+    margin-top: 0;
   }
 }
