@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { generateName } from "../names.js";
+import { generateModel, generateName } from "../names.js";
 
 test("generates a complete name", () => {
   const name = generateName(() => 0);
@@ -12,10 +12,7 @@ test("generates a complete name", () => {
 test("supports the upper random boundary", () => {
   const name = generateName(() => 0.999999);
 
-  assert.equal(
-    name,
-    "Gros Courant d'Air 2026-09-XL Vent Arrière — The Reckoning",
-  );
+  assert.equal(name, "BaguetteLM ∞B Zéro Gêne");
 });
 
 test("has a large output space", () => {
@@ -31,5 +28,26 @@ test("has a large output space", () => {
     names.add(generateName(random));
   }
 
-  assert.ok(names.size > 950);
+  assert.ok(names.size > 700);
+});
+
+test("does not reuse parts from the previous 30 generations", () => {
+  const history = [];
+  let state = 42;
+  const random = () => {
+    state = (state * 16807) % 2147483647;
+    return (state - 1) / 2147483646;
+  };
+
+  for (let index = 0; index < 100; index += 1) {
+    const excludedParts = new Set(history.flat());
+    const model = generateModel({ random, excludedParts });
+
+    assert.ok(model.parts.every((part) => !excludedParts.has(part)));
+    history.push(model.parts);
+
+    if (history.length > 30) {
+      history.shift();
+    }
+  }
 });

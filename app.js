@@ -1,30 +1,25 @@
-import { generateName } from "./names.js";
+import { generateModel } from "./names.js";
 
 const nameElement = document.querySelector("#model-name");
 const generateButton = document.querySelector("#generate-button");
 const copyButton = document.querySelector("#copy-button");
 const copyLabel = copyButton.querySelector("span");
 
-const recentNames = [];
+const recentParts = [];
 
 function showNewName() {
-  let nextName = generateName();
-  let attempts = 0;
+  const excludedParts = new Set(recentParts.flat());
+  const model = generateModel({ excludedParts });
 
-  while (recentNames.includes(nextName) && attempts < 20) {
-    nextName = generateName();
-    attempts += 1;
-  }
+  recentParts.push(model.parts);
 
-  recentNames.push(nextName);
-
-  if (recentNames.length > 50) {
-    recentNames.shift();
+  if (recentParts.length > 30) {
+    recentParts.shift();
   }
 
   nameElement.classList.remove("refreshing");
   void nameElement.offsetWidth;
-  nameElement.textContent = nextName;
+  nameElement.textContent = model.name;
   nameElement.classList.add("refreshing");
   copyLabel.textContent = "Copy name";
 }

@@ -1,5 +1,57 @@
+const models = [
+  { base: "BigCat", language: "en" },
+  { base: "CatGPT", language: "en" },
+  { base: "ChatGPP", language: "en" },
+  { base: "FatGPT", language: "en" },
+  { base: "Kitty-o", language: "en" },
+  { base: "OpenAyy", language: "en" },
+  { base: "Clawd", language: "en" },
+  { base: "Clawdacious", language: "en" },
+  { base: "Uncle Clawd", language: "en" },
+  { base: "Claudezilla", language: "en" },
+  { base: "Gemino", language: "en" },
+  { base: "Geminaughty", language: "en" },
+  { base: "Gemini Cricket", language: "en" },
+  { base: "Googley Eyes", language: "en" },
+  { base: "Gronk", language: "en" },
+  { base: "Gronk Hard", language: "en" },
+  { base: "Grok & Roll", language: "en" },
+  { base: "Elon's Helper", language: "en" },
+  { base: "Llama Drama", language: "en" },
+  { base: "Llama Del Rey", language: "en" },
+  { base: "Llamazon", language: "en" },
+  { base: "No Probllama", language: "en" },
+  { base: "DeepPeek", language: "en" },
+  { base: "DeeperSeek", language: "en" },
+  { base: "DeepFreak", language: "en" },
+  { base: "DeepCheeks", language: "en" },
+  { base: "Qwentyn", language: "en" },
+  { base: "Qwenjamin", language: "en" },
+  { base: "Qwen Diesel", language: "en" },
+  { base: "Qwen Stefani", language: "en" },
+  { base: "Co-Pirate", language: "en" },
+  { base: "Copilout", language: "en" },
+  { base: "GitHub Boyfriend", language: "en" },
+  { base: "Autocomplete Daddy", language: "en" },
+  { base: "Failcon", language: "en" },
+  { base: "Midjourneyman", language: "en" },
+  { base: "Perplexed AI", language: "en" },
+  { base: "Stable Delusion", language: "en" },
+  { base: "Phi Fo Fum", language: "en" },
+  { base: "Command-R Matey", language: "en" },
+  { base: "Mixtrouille", language: "fr" },
+  { base: "Jean-Mistral", language: "fr" },
+  { base: "Le Gros Modèle", language: "fr" },
+  { base: "Mistral Gagnant", language: "fr" },
+  { base: "La Bourrasque", language: "fr" },
+  { base: "Le Petit Vent", language: "fr" },
+  { base: "Gros Courant d'Air", language: "fr" },
+  { base: "BaguetteLM", language: "fr" },
+];
+
 const versions = [
   "0.69",
+  "1.5",
   "2.9",
   "3.1",
   "3.5",
@@ -8,222 +60,143 @@ const versions = [
   "4.7",
   "5.2",
   "6-ish",
+  "6.9B",
+  "7B",
+  "8x7B",
+  "8x22B",
+  "13B",
+  "22B",
+  "32B",
+  "34B",
+  "42B",
+  "65B",
+  "69B",
+  "70B",
+  "72B",
+  "120B",
+  "180B",
+  "314B",
+  "405B",
+  "420B",
+  "671B",
+  "900B",
+  "R1",
   "R2",
   "R34",
   "X3",
+  "X69",
   "0613",
-  "2026-09-XL",
-];
-
-const sizes = [
-  "6.9B",
-  "7B",
-  "13B",
-  "32B",
-  "69B",
-  "70B",
-  "420B",
-  "405B",
-  "8x22B",
+  "0909",
+  "vNext",
   "TooManyB",
+  "∞B",
 ];
 
-const loudEditions = [
+const englishEditions = [
   "Absolute Unit",
   "After Dark",
-  "Balls-to-the-Wall",
+  "Big Boy",
+  "Big Chungus",
+  "Big Context",
   "Beef Supreme",
-  "Big Context Energy",
   "Certified Thicc",
-  "Daddy Edition",
+  "Daddy",
   "Deeply Unsure",
   "Double-Stuffed",
   "Extra Large",
-  "Fully Loaded",
+  "Flashbang",
   "Full Monty",
-  "Hard Thinking",
+  "Fully Loaded",
+  "Hard Mode",
   "Heavy Duty",
+  "Horny Haiku",
   "Huge If True",
-  "Just the Tip Preview",
-  "Long Context",
+  "Instant Regret",
+  "Long Boy",
   "Magnum",
   "Massive",
-  "Maximum Length",
-  "Morning Release",
-  "No Pants Mode",
-  "Performance Issues",
-  "Premature Preview",
-  "Pro Max Ultra Plus",
-  "Raw & Unaligned",
-  "Size Matters Edition",
-  "Suspiciously Girthy",
-  "Token Tease",
-  "Uncut",
-  "Unreasonably Large",
-  "XL Pleasure Context",
-];
-
-const fastEditions = [
-  "Blink and Miss It",
-  "Fast & Flirtatious",
-  "Flashbang",
-  "Greased Lightning",
-  "Instant Regret",
-  "Instant-ish",
-  "Little Quickie",
-  "Mini but Mighty",
-  "Mini Turbo",
-  "Premature Inference",
-  "Quicker Picker",
-  "Speedrun Preview",
-  "Too Fast Too Curious",
-  "Zero Patience Edition",
-];
-
-const poeticEditions = [
-  "Big Ballad",
-  "Dirty Limerick",
-  "Epic Ballad",
-  "Haiku After Dark",
-  "Haiku XL",
-  "Horny Haiku",
-  "Limerick Magnum",
-  "Moaning Monologue",
-  "Naughty Novella",
+  "Max Pleasure",
+  "Moist",
+  "Morning Wood",
+  "Naughty",
+  "No Pants",
   "Opus Maximus",
-  "Romantic Fanfic",
-  "Suggestive Sonnet",
-  "Thirsty Verse",
-  "Unsolicited Poetry",
-];
-
-const corporateEditions = [
-  "Boardroom Banger",
-  "Business Casual",
-  "Enterprise-ish",
-  "Executive Package",
-  "Fiscal Daddy",
-  "Growth Hacking Edition",
-  "Meeting That Could Be an Email",
-  "Premium Premium",
-  "Shareholder Value Max",
-  "Synergy Pro",
-  "Unlimited Limited Preview",
-  "Venture-Backed Delusion",
+  "Overcompensating",
+  "Performance Issues",
+  "Premature",
+  "Quickie",
+  "Raw",
+  "Safety Optional",
+  "Size Queen",
+  "Suspiciously Girthy",
+  "Thirsty",
+  "Token Tease",
+  "Turbo Daddy",
+  "Unaligned",
+  "Uncut",
+  "Unhinged",
+  "Unlimited-ish",
+  "XL Package",
+  "Zero Shame",
 ];
 
 const frenchEditions = [
-  "Baguette Quantique",
-  "Beaucoup Trop Grand",
+  "Beau Gosse",
+  "Bien Lourd",
   "C'est Énorme",
+  "Chaude Devant",
+  "Coquin",
   "Croissant Turbo",
-  "Édition Beau Gosse",
+  "Double Beurre",
+  "Énorme Paquet",
+  "Fier-à-Bras",
+  "Fort en Gueule",
   "Grande Rafale",
   "Gros Débit",
+  "Hors Contrôle",
   "La Totale",
   "Le Magnifique",
+  "Long Courrier",
   "Maxi Cochon",
-  "Petit Mais Costaud",
-  "Réflexion Baguette",
+  "Méga Baguette",
+  "Pas Très Net",
+  "Petit Coquin",
+  "Plein Pot",
+  "Pur Beurre",
+  "Raclette Max",
   "Sans Filtre",
-  "Très Très Lourd",
+  "Sans Pantalon",
+  "Super Lourd",
+  "Très Costaud",
+  "Très Très Grand",
+  "Turbo Béret",
   "Vent Arrière",
+  "Version Longue",
+  "Zéro Gêne",
 ];
 
-const releaseTags = [
-  "",
-  "",
-  "",
-  " (Definitely Final)",
-  " [REDACTED]",
-  " — Research Preview",
-  " — Now With More B",
-  " — Please Clap",
-  " — Safety Optional",
-  " — The Reckoning",
-];
+function pickFresh(items, excludedParts, random, getPart = (item) => item) {
+  const freshItems = items.filter((item) => !excludedParts.has(getPart(item)));
+  const candidates = freshItems.length > 0 ? freshItems : items;
 
-function pick(items, random) {
-  return items[Math.floor(random() * items.length)];
+  return candidates[Math.floor(random() * candidates.length)];
 }
 
-function model(bases, editions, random, scale = versions) {
-  return `${pick(bases, random)} ${pick(scale, random)} ${pick(editions, random)}${pick(releaseTags, random)}`;
-}
+export function generateModel({
+  random = Math.random,
+  excludedParts = new Set(),
+} = {}) {
+  const model = pickFresh(models, excludedParts, random, (item) => item.base);
+  const version = pickFresh(versions, excludedParts, random);
+  const editions = model.language === "fr" ? frenchEditions : englishEditions;
+  const edition = pickFresh(editions, excludedParts, random);
 
-const families = [
-  (random) =>
-    model(
-      ["BigCat", "CatGPT", "ChatGPP", "FatGPT", "Kitty-o", "OpenAyy"],
-      loudEditions,
-      random,
-    ),
-  (random) =>
-    model(
-      ["Clawd", "Clawdacious", "Uncle Clawd", "Claudezilla"],
-      poeticEditions,
-      random,
-    ),
-  (random) =>
-    model(
-      ["Gemino", "Geminaughty", "Gemini Cricket", "Googley Eyes"],
-      fastEditions,
-      random,
-    ),
-  (random) =>
-    model(
-      ["Gronk", "Gronk Hard", "Grok & Roll", "Elon's Little Helper"],
-      loudEditions,
-      random,
-    ),
-  (random) =>
-    model(
-      ["Llama Drama", "Llama Del Rey", "Llamazon Prime", "No Probllama"],
-      loudEditions,
-      random,
-      sizes,
-    ),
-  (random) =>
-    model(
-      ["DeepPeek", "DeeperSeek", "DeepFreak", "DeepCheeks"],
-      loudEditions,
-      random,
-    ),
-  (random) =>
-    model(
-      ["Qwentyn", "Qwenjamin", "Qwen Diesel", "Qwen Stefani"],
-      corporateEditions,
-      random,
-      sizes,
-    ),
-  (random) =>
-    model(
-      ["Co-Pirate", "Copilout", "GitHub Boyfriend", "Autocomplete Daddy"],
-      corporateEditions,
-      random,
-    ),
-  (random) =>
-    model(
-      ["Failcon", "Stable Diffusionary", "Midjourneyman", "Perplexed AI"],
-      corporateEditions,
-      random,
-      sizes,
-    ),
-  (random) =>
-    model(
-      ["Mixtrouille", "Jean-Mistral", "Le Gros Modèle", "Mistral Gagnant"],
-      frenchEditions,
-      random,
-      sizes,
-    ),
-  (random) =>
-    model(
-      ["Le Mistral", "La Bourrasque", "Le Petit Vent", "Gros Courant d'Air"],
-      frenchEditions,
-      random,
-    ),
-];
+  return {
+    name: `${model.base} ${version} ${edition}`,
+    parts: [model.base, version, edition],
+  };
+}
 
 export function generateName(random = Math.random) {
-  return pick(families, random)(random);
+  return generateModel({ random }).name;
 }
